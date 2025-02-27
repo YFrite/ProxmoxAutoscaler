@@ -1,0 +1,80 @@
+# System config not recommended to change
+SYSTEM:
+  log_file: /var/log/proxmox_autoscaler.log
+  lock_file: /var/lock/proxmox_autoscaler.lock
+  backup_dir: /var/lib/proxmox_autoscaler/backups
+
+# Notification managers config (Optional)
+NOTIFICATIONS:
+  # Telegram manager (Optional)
+  TELEGRAM:
+    bot_token: "Your bot token"
+    chat_id: "Chat id to send notifications"
+    thread_id: "Thread id" # Optional
+    template: "TODO" # More information about templates in documentation (Optional)
+
+# Global config applies to all containers and virtual machines
+GLOBAL:
+  reserve_cpu: 10 # Percentage of CPU cores to reserve (recommended >= 10%)
+  reserve_ram: 2048 # MB of RAM to reserve
+
+  upper_threshold_cpu: 80 # CPU upper threshold (%)
+  lower_threshold_cpu: 10 # CPU lower threshold (%)
+
+  upper_threshold_ram: 80 # RAM upper threshold (%)
+  lower_threshold_ram: 10 # RAM upper threshold (%)
+
+  min_cpu_cores: 1 # Minimum of CPU cores
+  max_cpu_cores: 8 # Maximum of CPU cores (Optional)
+
+  min_ram: 512 # Minimum of RAM MB's
+  max_ram: 8192 # Maximum of RAM MB's (Optional)
+
+  min_increment_cpu_cores: 1 # Minimum of CPU cores to increment (Optional)
+  max_increment_cpu_cores: 4 # Maximum of CPU cores to increment (Optional)
+
+  min_increment_ram: 128 # Minimum of RAM MB's to increment (Optional)
+  max_increment_ram: 1024 # Maximum of RAM MB's to increment (Optional)
+
+  min_decrement_cpu_cores: 1 # Minimum of CPU cores to decrement (Optional)
+  max_decrement_cpu_cores: 4 # Maximum of CPU cores to decrement (Optional)
+
+  min_decrement_ram: 128 # Minimum of RAM MB's to decrement (Optional)
+  max_decrement_ram: 1024 # Maximum of RAM MB's to decrement (Optional)
+
+  poll_interval: 1800 # Seconds before next check and scale
+
+  # Autoscale only specific containers
+  include_cts:
+    - "pass"
+  # or all except those on this list
+  exclude_cts:
+    - "pass"
+
+  # Autoscale only specific virtual machines
+  include_vms:
+    - "pass"
+  # or all except those in this list
+  exclude_vms:
+    - "pass"
+
+
+# Override global config for virtual machines (Optional)
+VMS:
+  # Available the same parameters as in GLOBAL except include|exclude params
+
+
+# Override global config for containers (Optional)
+CTS:
+  # Available the same parameters as in GLOBAL except include|exclude params
+
+
+# Override global config for group of CT|VM (Optional)
+GROUP_{NAME}:
+  # Available the same parameters as in GLOBAL except include|exclude params
+
+  vm_ids:
+    - "pass"
+  container_ids:
+    - "pass"
+
