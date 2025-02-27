@@ -1,8 +1,7 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![Unlicense License][license-shield]][license-url]
+![Stars](https://img.shields.io/github/stars/YFrite/ProxmoxAutoscaler?style=flat-square)
+![Forks](https://img.shields.io/github/forks/YFrite/ProxmoxAutoscaler?style=flat-square)
+![Contributers](https://img.shields.io/github/contributors/YFrite/ProxmoxAutoscaler?style=flat-square)
+![Issues](https://img.shields.io/github/issues/YFrite/ProxmoxAutoscaler?style=flat-square)
 
 <br />
 <div align="center">
